@@ -1,29 +1,29 @@
-#include "Train.hpp"
+Ôªø#include "Train.hpp"
 
 Train::Train(const std::string station, const std::string time, int number):
-station(station), time(time),number(number){ std::cout << "\n ÓÌÒÚÛÍÚÓ Train\n";}
-Train::Train(const Train& t):station(t.station), time(t.time),number(t.number){ std::cout << "\n ÓÌÒÚÛÍÚÓ ÍÓÔËÓ‚‡ÌËˇ Train\n";}
+station(station), time(time),number(number){ std::cout << "\n–ö–æ–Ω—Å—Ç—Ä—É–∫—Ç–æ—Ä Train\n";}
+Train::Train(const Train& t):station(t.station), time(t.time),number(t.number){ std::cout << "\n–ö–æ–Ω—Å—Ç—Ä—É–∫—Ç–æ—Ä –∫–æ–ø–∏—Ä–æ–≤–∞–Ω–∏—è Train\n";}
 Train::~Train(){}
-	/*„ÂÚÚÂ˚ Ë ÒÂÚÚÂ˚ ‰Îˇ station*/
+	/*–≥–µ—Ç—Ç–µ—Ä—ã –∏ —Å–µ—Ç—Ç–µ—Ä—ã –¥–ª—è station*/
 void Train::setStation(const std::string& s){ this->station = s; }
 const std::string& Train::getStation()const { return this->station; }
-	/*„ÂÚÚÂ˚ Ë ÒÂÚÚÂ˚ ‰Îˇ time*/
+	/*–≥–µ—Ç—Ç–µ—Ä—ã –∏ —Å–µ—Ç—Ç–µ—Ä—ã –¥–ª—è time*/
 void Train::setTime(const std::string& t){ this->time = t;}
 const std::string& Train::getTime()const { return this->time;}
-	/*„ÂÚÚÂ˚ Ë ÒÂÚÚÂ˚ ‰Îˇ number*/
+	/*–≥–µ—Ç—Ç–µ—Ä—ã –∏ —Å–µ—Ç—Ç–µ—Ä—ã –¥–ª—è number*/
 void Train::setTime(int n){this->number = n;}
 int Train::getNumber()const{ return this->number;}
 
 std::istream& operator >>(std::istream& in, Train& t){
-	if(!(in >> t.number >> t.station >> t.time)){//ÂÒÎË ÌÂÍÓÂÍÚÌ˚È ‚‚Ó‰, ‚˚·Ë‚‡ÂÏ ËÒÍÎ˛˜ÂÌËÂ
-		throw Exception("ÕÂÍÓÂÍÚÌ˚È ‚‚Ó‰");
+	if(!(in >> t.number >> t.station >> t.time)){//–µ—Å–ª–∏ –Ω–µ–∫–æ—Ä—Ä–µ–∫—Ç–Ω—ã–π –≤–≤–æ–¥, –≤—ã–±–∏–≤–∞–µ–º –∏—Å–∫–ª—é—á–µ–Ω–∏–µ
+		throw Exception("–ù–µ–∫–æ—Ä—Ä–µ–∫—Ç–Ω—ã–π –≤–≤–æ–¥");
 	}
 	return in;
 }
 std::ostream& operator <<(std::ostream& out, const Train& t){
-	out << "\n¬ÂÏˇ: " << t.time
-		 << "\n—Ú‡ÌˆËˇ: " << t.station
-		 << "\nÕÓÏÂ: " <<t.number;
+	out << "\n–í—Ä–µ–º—è: " << t.time
+		 << "\n–°—Ç–∞–Ω—Ü–∏—è: " << t.station
+		 << "\n–ù–æ–º–µ—Ä: " <<t.number;
     return out;
 }
 
