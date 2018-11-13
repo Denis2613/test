@@ -1,6 +1,6 @@
 ﻿#include "Train.hpp"
 #include <iostream>
-#define cnt 2		//количество поездов
+#define cnt 8		//количество поездов
 #define SWAP(A, B) { Train t = A; A = B; B = t; } //меняем местами
 
 using namespace std;
@@ -18,23 +18,15 @@ void sort(Train *trains) {
 	} while (n);
 }
 
-void search(Train *trains) {
-	int a;
-	cout << "Номер: ";
-	if (!(cin >> a)) {
-		cout << "некорректный номер";
-		return;
-	}
+Train* search(Train *trains, int a) {
+
 	int i = 0;
 	for (; i < cnt; ++i) {
 		if (trains[i].getNumber() == a) {
-			cout << trains[i];
-			break;
+			return trains + i;
 		}
 	}
-	if (i == cnt) {
-		cout << "такого поезда нет!";
-	}
+	return nullptr;
 }
 
 void read(Train *trains) {
@@ -71,7 +63,19 @@ int main() {
 
 		}
 		else if (a == 3) {
-			search(trains);
+			int a;
+			cout << "Номер: ";
+			if (!(cin >> a)) {
+				cout << "некорректный номер";
+				continue;
+			}
+			Train *tmp = search(trains, a);
+			if (tmp != nullptr) {
+				cout << *tmp;
+			}
+			else {
+				cout << "Не найдено";
+			}
 		}
 	}
 
